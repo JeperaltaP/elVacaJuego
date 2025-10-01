@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = new Vector3(moveHorizontal, moveVertical, 0);
 
         transform.Translate(direction * speed * Time.deltaTime);
-
     }
 
 
