@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f; //variable para guardar la velocidad
     public int score = 0;
-    public bool hasKey = false;
-    public bool hasWater = false;
+    public bool hasShrooms = false;
+    public bool hasButcher = false;
     public TextMeshProUGUI textScore;
     public TextMeshProUGUI notificationText;
 
@@ -41,28 +41,29 @@ public class PlayerController : MonoBehaviour
 
             Destroy(other.gameObject);
             Debug.Log("Collected!!!");
-            ShowNotification("Collected!");
+            ShowNotification("Recolectado!!");
             Debug.Log("Score: " + score);
         }
 
-        if (other.CompareTag("Key"))
+        if (other.CompareTag("Shrooms"))
         {
-            hasKey = true;
-            Debug.Log("Key Collected!");
+            hasShrooms = true;
+            Debug.Log("Shroom Collected!");
             Destroy(other.gameObject);
+            ShowNotification("Hongos Recolectados!!!");
         }
 
         //condición de victoria
-        if (score >= 3 && hasKey && !hasWater) // el && significa "y", el || significa "o"; como en lógica: V||V = V, V||F = V, F||F = F
+        if (score >= 3 && hasShrooms && !hasButcher) // el && significa "y", el || significa "o"; como en lógica: V||V = V, V||F = V, F||F = F
         {
-            Debug.Log("Has ganado, no has tocado el agua, tienes suficientes puntos y la llave!");
-            ShowNotification("You have the key!!!");
+            Debug.Log("Has ganado, no te han chuleteado, tienes suficientes puntos y la llave!");
+            ShowNotification("tienes los hongos, las bostas y no te han chuleteado!!");
         }
         // para booleanos, si se pone el nombre de la variable sola, se asume si es verdadero, si tiene "!" delante, se asume si es falso
 
-        if (other.CompareTag("Water"))
+        if (other.CompareTag("Butcher"))
         {
-            hasWater = true;
+            hasButcher = true;
             Debug.Log("Muelto");
             Destroy(gameObject);
             ShowNotification("Muelto");
