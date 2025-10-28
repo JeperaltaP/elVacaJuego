@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
@@ -7,4 +8,10 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-}
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+}   
