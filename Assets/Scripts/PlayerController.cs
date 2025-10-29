@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI textScore;
     public TextMeshProUGUI notificationText;
     public GameObject VictoryPanel;
+    public GameObject LosePanel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Muelto");
             Destroy(gameObject);
             ShowNotification("Muelto");
+            LosePanel.SetActive(true);
         }
     }
 
