@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     public GameObject CreditsPanel;
+    public GameObject ConfigurationPanel;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -23,5 +24,15 @@ public class Buttons : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void ConfigurationOn()
+    {
+        ConfigurationPanel.SetActive(true);
+    }
+
+    public void ConfigurationOff()
+    {
+        ConfigurationPanel.SetActive(false);
     }
 }   
