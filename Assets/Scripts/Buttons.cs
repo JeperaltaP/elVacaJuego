@@ -7,6 +7,7 @@ public class Buttons : MonoBehaviour
     public GameObject CreditsPanel;
     public GameObject ConfigurationPanel;
     public GameObject PauseMenu;
+    public GameObject HowtoPlay;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -63,6 +64,16 @@ public class Buttons : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);
 
+    }
+
+    public void HowtoPlayOn()
+    {
+        HowtoPlay.SetActive(true);
+    }
+
+    public void HowtoPlayOff()
+    {
+        HowtoPlay.SetActive(false);
     }
 
 }   
