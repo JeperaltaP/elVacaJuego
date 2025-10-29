@@ -56,4 +56,13 @@ public class Buttons : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+
+    }
+
 }   
